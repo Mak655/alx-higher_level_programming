@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 #!/usr/bin/python3
 print("Best School")
+=======
+#!/bin/bash
+python3 $PYFILE
+>>>>>>> af1d1f41593b070906ba76217d03391f3b039b4e
