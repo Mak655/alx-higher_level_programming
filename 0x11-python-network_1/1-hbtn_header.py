@@ -1,17 +1,12 @@
 #!/usr/bin/python3
-"""
-Python script that sends a request to the URL and
-displays:
-- The body of the response if there are no errors
-- The error code when there is an HTTP error.
-"""
-import requests
-import sys
+"""Script that fetches https://alx-intranet.hbtn.io/status"""
 
+from urllib import request
 
 if __name__ == "__main__":
-    r = requests.get(sys.argv[1])
-    if r.status_code >= 400:
-        print("Error code: {}".format(r.status_code))
-    else:
-        print(r.text)
+    with request.urlopen("https://alx-intranet.hbtn.io/status") as response:
+        html = response.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(html)))
+        print("\t- content: {}".format(html))
+        print("\t- utf8 content: {}".format(html.decode('utf-8')))
